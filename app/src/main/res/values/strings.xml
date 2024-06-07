@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AppointmentScheduler</string>
+    <string name="Calendar">Calendar</string>
+    <string name="AddEvent">+</string>
+
+
+</resources>

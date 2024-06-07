@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="#000000"
+    android:orientation="vertical"
+    tools:context=".NewEvent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/MainLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#000000"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/EditPanel"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/Cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:onClick="CancelApp"
+                    android:text="Cancel"
+                    android:textColor="#C30000"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/Create"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="150dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:onClick="ScheduleApp"
+                    android:text="Schedule"
+                    android:textColor="#C30000"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/SchAppt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="35dp"
+                android:gravity="center"
+                android:text="Schedule Appointment"
+                android:textColor="#736E6E"
+                android:textSize="28sp" />
+
+            <LinearLayout
+                android:id="@+id/Time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="#323131"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:text="Start Time:"
+                        android:textColor="#736E6E"
+                        android:textSize="18sp" />
+
+                    <Button
+                        android:id="@+id/StartTimeButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginRight="40dp"
+                        android:layout_weight="1"
+                        android:onClick="getStartTime"
+                        android:text="Choose Start Time" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:text="End Time:"
+                        android:textColor="#736E6E"
+                        android:textSize="18sp" />
+
+                    <Button
+                        android:id="@+id/EndTimeButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="48dp"
+                        android:layout_marginRight="40dp"
+                        android:layout_weight="1"
+                        android:onClick="getEndTime"
+                        android:text="Choose End Time" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/PetInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="10dp"
+                android:background="#323131"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/PetName"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/PetNameTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="20dp"
+                        android:gravity="center"
+                        android:text="Pet Name:"
+                        android:textColor="#736E6E"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/PetNameET"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="40dp"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:textColor="#736E6E" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Breed"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/BreedTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="20dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Breed: "
+                        android:textColor="#736E6E"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/BreedET"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="40dp"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:textColor="#736E6E" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/OwnerName"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/OwnerNameTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="20dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Owner:"
+                        android:textColor="#736E6E"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/OwnerNameET"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="40dp"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:textColor="#736E6E" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Address"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/AddressTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Address:"
+                        android:textColor="#736E6E"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/AddressET"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="40dp"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:textColor="#736E6E" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/PhoneNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/PhoneNumberTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="20dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Phone:"
+                        android:textColor="#736E6E"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/PhoneNumberET"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="40dp"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="phone"
+                        android:textColor="#736E6E" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Payment"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/payTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="40dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="$"
+                        android:textColor="#736E6E"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/PayET"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="55dp"
+                        android:layout_marginRight="40dp"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="numberDecimal"
+                        android:textColor="#736E6E" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/Delete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="100dp"
+                android:onClick="DeleteApp"
+                android:text="Delete"
+                android:visibility="invisible" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
